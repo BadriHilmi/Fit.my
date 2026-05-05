@@ -24,7 +24,7 @@
                 <h2 class="text-3xl font-black text-gray-900 dark:text-white">Welcome back, {{ Auth::user()->name }}</h2>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Track meals through the day and keep your intake close to your goal.</p>
             </div>
-            <div class="rounded-2xl bg-white/90 px-5 py-4 shadow-sm ring-1 ring-emerald-100 dark:bg-gray-800 dark:ring-gray-700">
+            <div class="rounded-2xl border border-emerald-100/80 bg-white/70 px-5 py-4 shadow-sm backdrop-blur-md ring-1 ring-emerald-100/70 dark:bg-gray-800/75 dark:ring-gray-700/60">
                 <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Daily Goal</p>
                 <p class="mt-2 text-3xl font-black text-emerald-600 dark:text-emerald-300">{{ $goal }}</p>
                 <p class="text-sm text-gray-500">calories per day</p>
@@ -32,31 +32,31 @@
         </div>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-br from-emerald-50/70 via-transparent to-sky-50/70 dark:from-gray-900 dark:to-gray-900">
         <div class="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
             <div class="grid gap-4 md:grid-cols-4">
-                <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <div class="rounded-3xl border border-white/60 bg-white/60 p-5 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm text-gray-500">Consumed Today</p>
                     <p class="mt-2 text-3xl font-black text-gray-900 dark:text-white">{{ $dailyTotal }}</p>
                     <p class="text-sm text-gray-500">calories logged</p>
                 </div>
-                <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <div class="rounded-3xl border border-white/60 bg-white/60 p-5 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm text-gray-500">Remaining</p>
                     <p class="mt-2 text-3xl font-black {{ $remaining >= 0 ? 'text-emerald-600 dark:text-emerald-300' : 'text-red-600 dark:text-red-300' }}">{{ $remaining }}</p>
                     <p class="text-sm text-gray-500">{{ $remaining >= 0 ? 'before reaching goal' : 'over your goal' }}</p>
                 </div>
-                <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <div class="rounded-3xl border border-white/60 bg-white/60 p-5 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm text-gray-500">Meals Available</p>
                     <p class="mt-2 text-3xl font-black text-gray-900 dark:text-white">{{ $meals->count() }}</p>
                     <p class="text-sm text-gray-500">items in meal library</p>
                 </div>
-                <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <div class="rounded-3xl border border-white/60 bg-white/60 p-5 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm text-gray-500">Quick Action</p>
                     <a href="{{ route('ManageMeal.request-meal') }}" class="mt-3 inline-flex rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500">Request New Meal</a>
                 </div>
             </div>
 
-            <section class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <section class="rounded-3xl border border-white/60 bg-white/65 p-6 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Meal Library</p>
@@ -70,7 +70,7 @@
             </section>
 
             <div class="grid gap-6 xl:grid-cols-3">
-                <section class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <section class="rounded-3xl border border-white/60 bg-white/65 p-6 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-amber-500">Breakfast</p>
                     <h3 class="mt-1 text-2xl font-black text-gray-900 dark:text-white">{{ $totalBreakfast }} Calories</h3>
                     <div class="mt-5 overflow-x-auto">
@@ -90,7 +90,7 @@
                     </div>
                 </section>
 
-                <section class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <section class="rounded-3xl border border-white/60 bg-white/65 p-6 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-500">Lunch</p>
                     <h3 class="mt-1 text-2xl font-black text-gray-900 dark:text-white">{{ $totalLunch }} Calories</h3>
                     <div class="mt-5 overflow-x-auto">
@@ -110,7 +110,7 @@
                     </div>
                 </section>
 
-                <section class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                <section class="rounded-3xl border border-white/60 bg-white/65 p-6 shadow-sm backdrop-blur-md ring-1 ring-white/50 dark:bg-gray-800/70 dark:ring-gray-700/60">
                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-violet-500">Dinner</p>
                     <h3 class="mt-1 text-2xl font-black text-gray-900 dark:text-white">{{ $totalDinner }} Calories</h3>
                     <div class="mt-5 overflow-x-auto">
