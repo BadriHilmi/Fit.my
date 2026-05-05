@@ -40,9 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('ManageExercise/activity');
     })->name('activity');
 
-    Route::get('/report', function () {
-        return view('GenerateReport/report');
-    })->name('report');
+    Route::get('/report', [ReportController::class, 'index'])->name('report');
 
 
     });

@@ -1,44 +1,25 @@
-<link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-<div class="container mx-auto h-50 overflow-y-auto">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-lg text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Meal Description
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Calories
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Grade
-                </th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="overflow-y-auto h-32">
+<div class="relative overflow-hidden rounded-3xl border border-white/50 bg-white/60 shadow-sm backdrop-blur-md">
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-100/50 to-transparent"></div>
+    <div class="relative max-h-64 overflow-y-auto">
+        <table class="w-full text-left text-sm">
+            <thead class="sticky top-0 bg-sky-100/70 backdrop-blur-md text-xs uppercase tracking-wide text-sky-900">
+                <tr>
+                    <th class="px-4 py-3">Meal</th>
+                    <th class="px-4 py-3">Cal</th>
+                    <th class="px-4 py-3">Grade</th>
+                    <th class="px-4 py-3 text-right">Add</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-sky-100/70">
                 @foreach($meals as $meal)
-                <td class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ $meal->Name }}
-                </td>
-                <td class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4">
-                    {{ $meal->MealDescription }}
-                </td>
-                <td class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4">
-                    {{ $meal->Calories }} Calories
-                </td>
-                <td class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-6 py-4">
-                    {{ $meal->gred }}
-                    <p class="btn-holder">
-                        <a href="{{ route('add_to_cart1', ['id' => $meal->id]) }}" class="btn btn-primary btn-block text-center" role="button"><svg fill="none" stroke="lime-500" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg></a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    <tr class="hover:bg-white/40 transition">
+                        <td class="px-4 py-3"><p class="font-semibold text-gray-900">{{ $meal->Name }}</p><p class="text-xs text-gray-500">{{ $meal->MealDescription }}</p></td>
+                        <td class="px-4 py-3 font-semibold text-gray-700">{{ $meal->Calories }}</td>
+                        <td class="px-4 py-3 text-gray-600">{{ $meal->gred }}</td>
+                        <td class="px-4 py-3 text-right"><a href="{{ route('add_to_cart1', ['id' => $meal->id]) }}" class="inline-flex rounded-full bg-sky-500/90 px-3 py-1 text-xs font-semibold text-white hover:bg-sky-500">+</a></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
