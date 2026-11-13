@@ -1,0 +1,153 @@
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .fit-canvas {
+        background-image: linear-gradient(135deg, #d7dfe9 0%, #e4e8ee 48%, #d2e7df 100%);
+    }
+
+    .dark .fit-canvas {
+        background-image: linear-gradient(135deg, #070b14 0%, #0f172a 52%, #07221f 100%);
+    }
+
+    .fit-card {
+        background-color: #ffffff;
+        border: 1px solid #e5e5e5;
+        @apply shadow-soft;
+    }
+
+    .dark .fit-card {
+        background-color: #121214;
+        border: 1px solid #262626;
+        @apply shadow-xl shadow-black/40;
+    }
+
+    .fit-card-emerald {
+        background-color: #d8f3e5;
+        @apply shadow-lg shadow-emerald-900/[0.08];
+    }
+
+    .dark .fit-card-emerald {
+        background-color: #13312a;
+        @apply shadow-xl shadow-black/40;
+    }
+
+    .fit-card-sky {
+        background-color: #dff0fe;
+        @apply shadow-lg shadow-sky-900/[0.08];
+    }
+
+    .dark .fit-card-sky {
+        background-color: #152a3d;
+        @apply shadow-xl shadow-black/40;
+    }
+
+    .fit-card-amber {
+        background-color: #fef0c7;
+        @apply shadow-lg shadow-amber-900/[0.08];
+    }
+
+    .dark .fit-card-amber {
+        background-color: #2d2417;
+        @apply shadow-xl shadow-black/40;
+    }
+
+    .fit-card-violet {
+        background-color: #ebe6fe;
+        @apply shadow-lg shadow-violet-900/[0.08];
+    }
+
+    .dark .fit-card-violet {
+        background-color: #241d3a;
+        @apply shadow-xl shadow-black/40;
+    }
+
+    .fit-pill {
+        background-color: #f8fafc;
+        @apply shadow-sm shadow-slate-900/[0.06];
+    }
+
+    .dark .fit-pill {
+        background-color: #1e293b;
+        @apply shadow-md shadow-black/30;
+    }
+}
+
+@keyframes fit-wave-slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fit-wave-slide-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fit-fat-wobble {
+    0%, 100% {
+        transform: scale(1.10, 1.07);
+    }
+    50% {
+        transform: scale(1.15, 1.02);
+    }
+}
+
+.fit-wave-fast {
+    animation: fit-wave-slide 3.2s linear infinite;
+}
+
+.fit-wave-slow {
+    animation: fit-wave-slide-reverse 5.2s linear infinite;
+}
+
+.fit-fat-jelly {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fit-fat-wobble 2.2s ease-in-out infinite;
+}
+
+
+.align-to-right {
+    float: right;
+    padding: 10px;
+    background-color: hotpink;
+   }
+
+   /* Toggle Button Styles */
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.toggle-marker {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:checked + .toggle-label .toggle-marker {
+    transform: translateX(16px);
+}
+
