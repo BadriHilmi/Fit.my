@@ -140,7 +140,7 @@
         <div
             x-show="pinned"
             x-cloak
-            class="pointer-events-none fixed inset-x-0 top-[4.75rem] z-50"
+            class="pointer-events-none fixed inset-x-0 top-[4.75rem] z-30"
         >
             <div class="mx-auto flex max-w-7xl justify-start px-4 sm:px-6 md:justify-end lg:px-8">
                 <div

@@ -20,7 +20,7 @@
     }
 }" 
 x-init="if (darkMode) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark'); }"
-class="sticky top-0 z-40 border-b border-gray-200/80 bg-white/85 shadow-sm shadow-slate-900/[0.04] backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-black/25 transition-colors"
+class="sticky top-0 z-50 border-b border-gray-200/80 bg-white/85 shadow-sm shadow-slate-900/[0.04] backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-black/25 transition-colors"
 >
     <!-- Primary Navigation Menu -->
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

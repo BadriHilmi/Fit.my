@@ -6,7 +6,7 @@
 <header
     x-data="{ mobileOpen: false, activeNav: '' }"
     @keydown.escape.window="mobileOpen = false"
-    class="sticky top-0 z-40 border-b border-[#e5e5e5]/80 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 dark:border-slate-800"
+    class="sticky top-0 z-50 border-b border-[#e5e5e5]/80 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 dark:border-slate-800"
 >
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <a href="{{ url('/') }}" class="inline-flex items-center gap-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00d4a4] focus:ring-offset-2">
