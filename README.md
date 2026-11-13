@@ -40,8 +40,10 @@ Fit.my is a Laravel-based **nutrition, exercise, and daily energy-balance tracki
 - **User Meal Proposals (`/request-meal`):** Users can submit new dish suggestions for review.
 - **Admin Control Center (`/Admin`):** Admins review pending requests, approve dishes into the shared `meals` catalog, or delete invalid submissions.
 
-### 7. Theme & Branding
-- **Light & Dark Modes:** Soft grayish-white gradient background in light mode (`#d7dfe9 → #e4e8ee → #d2e7df`) and deep slate-emerald gradient in dark mode (`#070b14 → #0f172a → #07221f`), paired with solid pastel surface cards (`.fit-card*`) and a navbar theme toggle.
+### 7. Theme & Modern Design System
+- **Mintlify Design Tokens:** Clean flat canvas (`#f8fdfa`, `#f7f7f8`, `#ffffff`), rich dark contrast surfaces (`#0a0a0a`), signature mint accents (`#00d4a4` / `#00b48a`), hairline `1px` borders (`#e5e5e5`), and subtle elevation (`shadow-card`, `shadow-mockup`).
+- **Pill System & Typography:** Universal pill buttons (`rounded-full`) for CTAs, tabs, and tags, with **Geist Mono** tabular numerals (`font-mono tabular-nums`) for high-precision calorie and metric tracking.
+- **Lucide Icon Pack:** Unified 24x24 vector stroke icons across all modules: meal slots (Sunrise, Utensils, Soup), stat cards (Target, Flame, Sparkles), features, and navigation.
 - **Brand Identity:** Custom Apple + Heartbeat Pulse vector SVG logo (`application-logo.blade.php` and `public/favicon.svg`).
 
 ---
@@ -49,16 +51,17 @@ Fit.my is a Laravel-based **nutrition, exercise, and daily energy-balance tracki
 ## Tech Stack
 
 - **Backend:** PHP 8.1+ (verified on PHP 8.4), Laravel 10 (`^10.8`), Laravel Breeze, Laravel Sanctum
-- **Frontend:** Blade templates, Tailwind CSS `3.3` (`@tailwindcss/forms`), Alpine.js `3.12`, Vite `4`
+- **Frontend:** Blade templates, Tailwind CSS `3.3` (`@tailwindcss/forms`), Alpine.js `3.12`, Vite `4`, Geist Mono font
+- **Icons & Design:** Lucide icon pack, Mintlify design tokens (`DESIGN.md`)
 - **Database:** SQLite (default local `.env`) or MySQL (`.env.example`)
-- **Testing:** PHPUnit `10` (`Feature` & `Unit` suites)
+- **Testing:** PHPUnit `10` (`Feature` & `Unit` suites with memory SQLite protection)
 
 ---
 
 ## Project Structure
 
 ```text
-FIt.my/
+.
 ├── DESIGN.md                                 # Mintlify design token specifications
 ├── README.md                                 # Project documentation
 ├── app/
@@ -90,7 +93,8 @@ FIt.my/
 │       └── MealSeeder.php                    # 21 seeded dishes + 3 pending requests
 ├── public/
 │   ├── build/                                # Compiled Vite CSS/JS assets
-│   └── favicon.svg                           # App SVG favicon
+│   ├── favicon.svg                           # App SVG favicon
+│   └── index.php                             # Laravel entry point
 ├── resources/
 │   ├── css/app.css                           # Mintlify tokens, hairline cards, typography
 │   ├── js/app.js                             # Alpine init & `window.fitApi` AJAX helper
@@ -106,11 +110,12 @@ FIt.my/
 ├── routes/
 │   ├── auth.php
 │   └── web.php
-└── tests/Feature/
-    ├── ExerciseLogTest.php
-    ├── LandingPageTest.php
-    ├── ProfileTest.php
-    └── ReportAnalyticsTest.php
+├── artisan                                   # Laravel CLI
+├── composer.json                             # PHP dependencies
+├── package.json                              # Node dependencies
+├── phpunit.xml                               # Test configuration (in-memory SQLite)
+├── tailwind.config.js                        # Tailwind & Mintlify theme extensions
+└── vite.config.js                            # Frontend asset bundler
 ```
 
 ---
@@ -206,3 +211,24 @@ php -d "error_reporting=E_ALL & ~E_DEPRECATED" vendor\bin\phpunit tests\Feature\
 php -d "error_reporting=E_ALL & ~E_DEPRECATED" vendor\bin\phpunit tests\Feature\ExerciseLogTest.php
 php -d "error_reporting=E_ALL & ~E_DEPRECATED" vendor\bin\phpunit tests\Feature\ReportAnalyticsTest.php
 ```
+
+---
+
+## Production & Online Server Deployment
+
+Because the Laravel application lives at the repository root, deploying to hosting platforms requires zero directory workarounds:
+
+1. **Standard Web Root:** Point your web server document root (Nginx / Apache / cPanel / LiteSpeed) directly to `/public`.
+2. **Build Hook:**
+   ```bash
+   composer install --no-dev --optimize-autoloader
+   npm ci && npm run build
+   php artisan migrate --force
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   ```
+3. **Environment:**
+   - Set `APP_ENV=production` and `APP_DEBUG=false`.
+   - Configure MySQL credentials (`DB_CONNECTION=mysql`, `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+   - Run `php artisan key:generate` to produce the application secret key.
