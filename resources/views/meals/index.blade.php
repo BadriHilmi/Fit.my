@@ -30,9 +30,7 @@
             <!-- Search Bar -->
             <div class="relative flex-1">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-                    </svg>
+                    <x-tabler-icon name="search" class="h-4 w-4" />
                 </div>
                 <input 
                     type="text" 
@@ -46,9 +44,7 @@
                     type="button" 
                     class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
                 >
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18" /><path d="m6 6 12 12"/>
-                    </svg>
+                    <x-tabler-icon name="x" class="h-4 w-4" />
                 </button>
             </div>
 
@@ -165,7 +161,7 @@
                     class="mb-2.5 flex items-center justify-between rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-black text-white shadow-sm"
                 >
                     <span class="flex items-center gap-1.5 truncate">
-                        <svg class="h-3.5 w-3.5 animate-pulse text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                        <x-tabler-icon name="sparkles" class="h-3.5 w-3.5 animate-pulse text-amber-200" />
                         <span class="truncate">Dragging: {{ $meal->Name }}</span>
                     </span>
                     <span class="shrink-0 text-[10px] font-bold uppercase tracking-wider text-emerald-100">Drop above ↑</span>
@@ -183,9 +179,7 @@
                             </span>
                             <!-- Drag grip hint icon -->
                             <span class="text-slate-300 group-hover:text-slate-400 dark:text-slate-600 dark:group-hover:text-slate-400" title="Drag this food card into Breakfast, Lunch, or Dinner">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/>
-                                </svg>
+                                <x-tabler-icon name="grip-vertical" class="h-4 w-4" />
                             </span>
                         </div>
                         <span class="inline-flex items-center rounded-lg bg-slate-100 px-2.5 py-0.5 text-xs font-extrabold text-slate-800 dark:bg-slate-800 dark:text-slate-200">
@@ -206,16 +200,14 @@
                     <!-- Tap / Drag Indicator Footer -->
                     <div class="flex items-center justify-between pt-1 text-[11px] font-semibold text-slate-400 group-hover:text-emerald-600 dark:text-slate-500">
                         <span class="flex items-center gap-1">
-                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+                            <x-tabler-icon name="hand-grab" class="h-3 w-3" />
                             <span x-text="expanded === {{ $meal->id }} ? 'Click to collapse' : 'Drag or click to add'"></span>
                         </span>
-                        <svg 
+                        <x-tabler-icon 
+                            name="chevron-down"
                             class="h-3.5 w-3.5 transform transition-transform duration-300"
-                            :class="expanded === {{ $meal->id }} ? 'rotate-180 text-emerald-600' : ''"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        >
-                            <path d="m6 9 6 6 6-6"/>
-                        </svg>
+                            x-bind:class="expanded === {{ $meal->id }} ? 'rotate-180 text-emerald-600' : ''"
+                        />
                     </div>
                 </div>
 

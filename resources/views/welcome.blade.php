@@ -97,11 +97,7 @@
                 <div class="mt-8 flex flex-wrap items-center gap-3.5">
                     <x-button variant="primary" size="lg" :href="route('register')">
                         Get started free
-                        {{-- Lucide ArrowRight --}}
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
+                        <x-tabler-icon name="arrow-right" class="h-4 w-4" />
                     </x-button>
 
                     <x-button variant="secondary" size="lg" href="#calculator">
@@ -111,27 +107,15 @@
 
                 <ul class="mt-7 flex flex-col gap-2.5 text-sm font-medium text-[#3a3a3c] sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2 dark:text-slate-200">
                     <li class="inline-flex items-center gap-2">
-                        {{-- Lucide CheckCircle2 --}}
-                        <svg class="h-4 w-4 shrink-0 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" class="stroke-[#00d4a4]/40" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
+                        <x-tabler-icon name="circle-check" class="h-4 w-4 shrink-0 text-[#00b48a]" />
                         <span>Free to use</span>
                     </li>
                     <li class="inline-flex items-center gap-2">
-                        {{-- Lucide CheckCircle2 --}}
-                        <svg class="h-4 w-4 shrink-0 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" class="stroke-[#00d4a4]/40" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
+                        <x-tabler-icon name="circle-check" class="h-4 w-4 shrink-0 text-[#00b48a]" />
                         <span>No account needed to try the calculator</span>
                     </li>
                     <li class="inline-flex items-center gap-2">
-                        {{-- Lucide CheckCircle2 --}}
-                        <svg class="h-4 w-4 shrink-0 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" class="stroke-[#00d4a4]/40" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
+                        <x-tabler-icon name="circle-check" class="h-4 w-4 shrink-0 text-[#00b48a]" />
                         <span>Personalized to your age, weight and activity</span>
                     </li>
                 </ul>
@@ -252,19 +236,7 @@
                     description="Compute your resting BMR and daily activity-adjusted energy needs in seconds."
                 >
                     <x-slot:icon>
-                        {{-- Lucide Calculator --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <rect width="16" height="20" x="4" y="2" rx="2" />
-                            <line x1="8" x2="16" y1="6" y2="6" />
-                            <line x1="16" x2="16" y1="14" y2="18" />
-                            <path d="M16 10h.01" />
-                            <path d="M12 10h.01" />
-                            <path d="M8 10h.01" />
-                            <path d="M12 14h.01" />
-                            <path d="M8 14h.01" />
-                            <path d="M12 18h.01" />
-                            <path d="M8 18h.01" />
-                        </svg>
+                        <x-tabler-icon name="calculator" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
 
@@ -274,12 +246,7 @@
                     description="Keep a daily calorie target tailored to your body metrics so you always know how much room remains."
                 >
                     <x-slot:icon>
-                        {{-- Lucide Target --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="6" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
+                        <x-tabler-icon name="target" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
 
@@ -289,11 +256,7 @@
                     description="Browse breakfast, lunch, and dinner options complete with calorie counts, descriptions, and nutrition grades."
                 >
                     <x-slot:icon>
-                        {{-- Lucide BookOpen --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                        </svg>
+                        <x-tabler-icon name="book" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
 
@@ -303,14 +266,7 @@
                     description="Add meals to breakfast, lunch, or dinner and watch your daily intake update immediately against your target."
                 >
                     <x-slot:icon>
-                        {{-- Lucide CalendarCheck2 --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M8 2v4" />
-                            <path d="M16 2v4" />
-                            <path d="M21 14V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
-                            <path d="M3 10h18" />
-                            <path d="m16 20 2 2 4-4" />
-                        </svg>
+                        <x-tabler-icon name="calendar-check" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
 
@@ -320,13 +276,7 @@
                     description="Save your daily calorie totals and meal breakdown to review past days and track steady habits."
                 >
                     <x-slot:icon>
-                        {{-- Lucide BarChart3 --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M3 3v18h18" />
-                            <path d="M18 17V9" />
-                            <path d="M13 17V5" />
-                            <path d="M8 17v-3" />
-                        </svg>
+                        <x-tabler-icon name="chart-bar" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
 
@@ -336,11 +286,7 @@
                     description="Can't find your favorite dish? Submit a meal request with its calorie details for admin approval into the library."
                 >
                     <x-slot:icon>
-                        {{-- Lucide ChefHat --}}
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
-                            <line x1="6" x2="18" y1="17" y2="17" />
-                        </svg>
+                        <x-tabler-icon name="chef-hat" class="h-5 w-5" />
                     </x-slot:icon>
                 </x-feature-card>
             </div>
@@ -374,19 +320,11 @@
                 <div class="flex items-center justify-center py-1 text-[#00b48a] md:px-2 md:py-0" aria-hidden="true">
                     <div class="flex flex-col items-center md:hidden">
                         <span class="h-3 w-px bg-[#00d4a4]/40"></span>
-                        {{-- Lucide ArrowDown --}}
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
-                        </svg>
+                        <x-tabler-icon name="arrow-down" class="h-4 w-4" />
                     </div>
                     <div class="hidden items-center md:flex">
                         <span class="h-px w-6 bg-[#00d4a4]/40"></span>
-                        {{-- Lucide ArrowRight --}}
-                        <svg class="h-4 w-4 -ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
+                        <x-tabler-icon name="arrow-right" class="h-4 w-4 -ml-1" />
                     </div>
                 </div>
 
@@ -408,26 +346,11 @@
                 <div class="flex items-center justify-center py-1 text-[#00b48a] md:px-2 md:py-0" aria-hidden="true">
                     <div class="flex flex-col items-center md:hidden">
                         <span class="h-3 w-px bg-[#00d4a4]/40"></span>
-                        {{-- Lucide ArrowDown --}}
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
-                        </svg>
+                        <x-tabler-icon name="arrow-down" class="h-4 w-4" />
                     </div>
                     <div class="hidden items-center md:flex">
                         <span class="h-px w-6 bg-[#00d4a4]/40"></span>
-                        {{-- Lucide ArrowRight --}}
-                        <svg class="h-4 w-4 -ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-                    <div class="hidden items-center md:flex">
-                        <span class="h-px w-6 bg-[#00d4a4]/40"></span>
-                        <svg class="h-4 w-4 -ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
+                        <x-tabler-icon name="arrow-right" class="h-4 w-4 -ml-1" />
                     </div>
                 </div>
 
@@ -478,9 +401,7 @@
                             tone="primary"
                         >
                             <x-slot:icon>
-                                <svg class="h-5 w-5 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-                                </svg>
+                                <x-tabler-icon name="target" class="h-5 w-5 text-[#00b48a]" />
                             </x-slot:icon>
                         </x-stat-card>
 
@@ -492,9 +413,7 @@
                             :tone="$sampleUnderGoal ? 'primary' : 'warning'"
                         >
                             <x-slot:icon>
-                                <svg class="h-5 w-5 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                                </svg>
+                                <x-tabler-icon name="flame" class="h-5 w-5 text-[#00b48a]" />
                             </x-slot:icon>
                         </x-stat-card>
 
@@ -506,10 +425,7 @@
                             tone="primary"
                         >
                             <x-slot:icon>
-                                <svg class="h-5 w-5 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                                    <path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" />
-                                </svg>
+                                <x-tabler-icon name="sparkles" class="h-5 w-5 text-[#00b48a]" />
                             </x-slot:icon>
                         </x-stat-card>
                     </div>
@@ -662,19 +578,11 @@
                                 class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-[#0a0a0a] transition hover:bg-[#f7f7f8] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#00d4a4] sm:px-6 sm:text-base dark:text-white dark:hover:bg-slate-800"
                             >
                                 <span>{{ $faq['q'] }}</span>
-                                <svg
+                                <x-tabler-icon
+                                    name="chevron-down"
                                     class="h-5 w-5 shrink-0 text-[#888888] transition-transform duration-200"
-                                    :class="openIndex === {{ $index }} ? 'rotate-180 text-[#00b48a]' : ''"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    aria-hidden="true"
-                                >
-                                    <path d="m6 9 6 6 6-6" />
-                                </svg>
+                                    x-bind:class="openIndex === {{ $index }} ? 'rotate-180 text-[#00b48a]' : ''"
+                                />
                             </button>
                         </h3>
 

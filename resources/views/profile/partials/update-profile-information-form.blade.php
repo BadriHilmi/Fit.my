@@ -112,10 +112,10 @@
         :class="toastError ? 'bg-rose-600' : 'bg-emerald-600'"
     >
         <template x-if="!toastError">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <x-tabler-icon name="check" class="h-4 w-4" />
         </template>
         <template x-if="toastError">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            <x-tabler-icon name="alert-circle" class="h-4 w-4" />
         </template>
         <span x-text="toastMessage"></span>
     </div>
@@ -414,7 +414,7 @@
             <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                 @if (session('status') === 'profile-updated')
                     <span x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2500)" class="inline-flex items-center gap-1.5 font-bold">
-                        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                         <span>Saved!</span>
                     </span>
                 @endif

@@ -32,7 +32,7 @@
                     href="{{ route('report.export', ['range' => $selectedRange]) }}"
                     class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-sm transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
                 >
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <x-tabler-icon name="download" class="h-4 w-4" />
                     <span>Export CSV</span>
                 </a>
 
@@ -41,7 +41,7 @@
                     onclick="window.print()"
                     class="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-emerald-500"
                 >
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                    <x-tabler-icon name="printer" class="h-4 w-4" />
                     <span>Print</span>
                 </button>
             </div>
@@ -56,7 +56,7 @@
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-start gap-3">
                         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-sm">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                            <x-tabler-icon name="chart-bar" class="h-5 w-5" />
                         </span>
                         <div>
                             <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
@@ -236,7 +236,7 @@
                             <div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="inline-flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200">
-                                        <svg class="h-3.5 w-3.5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                        <x-tabler-icon name="activity" class="h-3.5 w-3.5 text-emerald-500" />
                                         <span>{{ $item['label'] }}</span>
                                     </span>
                                     <span class="font-extrabold text-emerald-600 dark:text-emerald-400">
@@ -404,7 +404,7 @@
                                                         <div class="flex flex-wrap gap-2">
                                                             @foreach ($row['exercise_logs'] as $log)
                                                                 <div class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs shadow-sm dark:border-slate-700 dark:bg-slate-900">
-                                                                    <svg class="h-3.5 w-3.5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                                                    <x-tabler-icon name="activity" class="h-3.5 w-3.5 text-emerald-500" />
                                                                     <span class="font-bold text-slate-800 dark:text-white">{{ $log->activity_name }}</span>
                                                                     <span class="text-slate-400">&middot;</span>
                                                                     <span class="text-slate-500">{{ $log->duration_minutes }} min</span>

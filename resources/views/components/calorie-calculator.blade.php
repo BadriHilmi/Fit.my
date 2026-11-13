@@ -189,9 +189,7 @@
                 <div class="flex h-full flex-col justify-between gap-5">
                     <div>
                         <span class="inline-flex items-center gap-1.5 rounded-full border border-[#00d4a4]/30 bg-[#00d4a4]/10 px-3 py-1 text-xs font-semibold text-[#008f6e] dark:text-[#00d4a4]">
-                            <svg class="h-3.5 w-3.5 text-[#00b48a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                            </svg>
+                            <x-tabler-icon name="flame" class="h-3.5 w-3.5 text-[#00b48a]" />
                             Activity-adjusted daily target
                         </span>
 
@@ -249,11 +247,7 @@
                 <div class="flex h-full flex-col justify-between gap-5">
                     <div>
                         <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#00d4a4]/10 text-[#00b48a] border border-[#00d4a4]/25">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                                <path d="m9 14 2 2 4-4" />
-                            </svg>
+                            <x-tabler-icon name="clipboard-check" class="h-5 w-5" />
                         </div>
 
                         <h4 class="mt-4 text-xl font-bold tracking-tight text-[#0a0a0a] dark:text-white">Your daily target awaits</h4>
@@ -264,19 +258,19 @@
                         <ul class="mt-5 space-y-2.5 text-sm text-[#3a3a3c] dark:text-slate-200">
                             <li class="flex items-center gap-2.5">
                                 <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00d4a4]/15 text-[#00b48a]">
-                                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                                    <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                                 </span>
                                 Instant calorie estimate right on this page
                             </li>
                             <li class="flex items-center gap-2.5">
                                 <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00d4a4]/15 text-[#00b48a]">
-                                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                                    <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                                 </span>
                                 Shows both BMR and activity-adjusted target
                             </li>
                             <li class="flex items-center gap-2.5">
                                 <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00d4a4]/15 text-[#00b48a]">
-                                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                                    <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                                 </span>
                                 Guests never save data to the database
                             </li>

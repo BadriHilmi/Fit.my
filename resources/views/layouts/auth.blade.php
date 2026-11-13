@@ -45,19 +45,19 @@
                 <ul class="space-y-3 pt-2 text-sm text-white/95">
                     <li class="flex items-start gap-3">
                         <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20">
-                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                            <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                         </span>
                         <span>Personalized daily target calculated from your body metrics</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20">
-                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                            <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                         </span>
                         <span>Fast meal browsing across Breakfast, Lunch, and Dinner</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20">
-                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                            <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                         </span>
                         <span>Saved daily summaries to review goal consistency</span>
                     </li>

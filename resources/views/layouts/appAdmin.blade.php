@@ -71,9 +71,7 @@
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
-                                <svg class="h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="m6 9 6 6 6-6" />
-                                </svg>
+                                <x-tabler-icon name="chevron-down" class="h-4 w-4 text-gray-400" />
                             </div>
                         </button>
                         <!-- Toggle Button -->
@@ -101,14 +99,9 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" x1="4" x2="20" y1="12" y2="12" />
-                        <line :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" x1="4" x2="20" y1="6" y2="6" />
-                        <line :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" x1="4" x2="20" y1="18" y2="18" />
-                        <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" d="M18 6 6 18" />
-                        <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" d="m6 6 12 12" />
-                    </svg>
+                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out" aria-label="Toggle navigation">
+                    <x-tabler-icon name="menu-2" class="h-6 w-6" x-show="!open" />
+                    <x-tabler-icon name="x" class="h-6 w-6" x-show="open" x-cloak />
                 </button>
             </div>
         </div>

@@ -59,7 +59,7 @@
                         x-init="setTimeout(() => show = false, 2500)"
                         class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400"
                     >
-                        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <x-tabler-icon name="check" class="h-3.5 w-3.5" />
                         <span>{{ __('Password updated.') }}</span>
                     </p>
                 @endif

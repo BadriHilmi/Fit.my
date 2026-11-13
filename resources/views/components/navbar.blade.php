@@ -53,15 +53,8 @@
             aria-label="Toggle navigation menu"
             class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#0a0a0a] transition hover:bg-[#f7f7f8] focus:outline-none focus:ring-2 focus:ring-[#00d4a4] md:hidden dark:bg-slate-800 dark:border-slate-700 dark:text-white"
         >
-            <svg x-show="!mobileOpen" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-            <svg x-cloak x-show="mobileOpen" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-            </svg>
+            <x-tabler-icon name="menu-2" class="h-5 w-5" x-show="!mobileOpen" />
+            <x-tabler-icon name="x" class="h-5 w-5" x-show="mobileOpen" x-cloak />
         </button>
     </nav>
 
