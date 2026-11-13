@@ -20,7 +20,6 @@
             'breakfast' => [
                 'title' => 'Breakfast',
                 'subtitle' => 'Morning Intake',
-                'emoji' => '🌅',
                 'addPath' => 'add-to-cart',
                 'cardClass' => 'fit-card-amber',
                 'headerBg' => 'border-b border-amber-200/80 bg-amber-50/70 dark:border-amber-900/60 dark:bg-amber-950/40',
@@ -41,7 +40,6 @@
             'lunch' => [
                 'title' => 'Lunch',
                 'subtitle' => 'Midday Meal',
-                'emoji' => '☀️',
                 'addPath' => 'add-to-cart1',
                 'cardClass' => 'fit-card-sky',
                 'headerBg' => 'border-b border-sky-200/80 bg-sky-50/70 dark:border-sky-900/60 dark:bg-sky-950/40',
@@ -62,7 +60,6 @@
             'dinner' => [
                 'title' => 'Dinner',
                 'subtitle' => 'Evening Meal',
-                'emoji' => '🌙',
                 'addPath' => 'add-to-cart2',
                 'cardClass' => 'fit-card-violet',
                 'headerBg' => 'border-b border-violet-200/80 bg-violet-50/70 dark:border-violet-900/60 dark:bg-violet-950/40',
@@ -241,8 +238,8 @@
             x-cloak
             class="fixed top-20 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-2xl border-2 border-emerald-500 bg-white/95 px-5 py-3 text-sm font-extrabold text-slate-900 shadow-2xl backdrop-blur-md dark:bg-slate-900/95 dark:text-white"
         >
-            <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 animate-pulse">
-                🥗
+            <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 animate-pulse">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 2v10a6 6 0 0 1-6 6v4"/><path d="M6 2v20"/></svg>
             </span>
             <div class="flex items-center gap-2">
                 <span>Dragging:</span>
@@ -259,7 +256,12 @@
             class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-2xl px-5 py-3.5 text-sm font-bold text-white shadow-2xl backdrop-blur-md"
             :class="toastError ? 'bg-rose-600' : 'bg-emerald-600'"
         >
-            <span x-text="toastError ? '!' : '✓'"></span>
+            <template x-if="!toastError">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </template>
+            <template x-if="toastError">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            </template>
             <span x-text="toastMessage"></span>
         </div>
 
@@ -269,7 +271,9 @@
             @if (session('success'))
                 <div class="flex items-center justify-between rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3.5 text-sm font-semibold text-emerald-800 dark:border-emerald-500/40 dark:text-emerald-300">
                     <div class="flex items-center gap-2">
-                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-xs text-white">✓</span>
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-xs text-white">
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
                         <span>{{ session('success') }}</span>
                     </div>
                 </div>
@@ -360,7 +364,8 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
-                            <span>✨</span> Drag food cards directly into these boxes
+                            <svg class="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                            Drag food cards directly into these boxes
                         </span>
                     </div>
                 </div>
@@ -479,8 +484,9 @@
                         <p class="text-xs text-slate-500 dark:text-slate-400">Drag any dish card into a meal box above, or click to expand details.</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="hidden text-xs font-semibold text-slate-400 sm:inline">
-                            🖱️ Drag dish &rarr; Drop in Box
+                        <span class="hidden items-center gap-1.5 text-xs font-semibold text-slate-400 sm:inline-flex">
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l-3 3 3 3"/><path d="M9 5l3-3 3 3"/><path d="M15 19l-3 3-3-3"/><path d="M19 9l3 3-3 3"/><path d="M2 12h20"/><path d="M12 2v20"/></svg>
+                            Drag dish &rarr; Drop in Box
                         </span>
                         <a href="{{ route('ManageMeal.request-meal') }}" class="text-xs font-bold text-emerald-600 hover:underline dark:text-emerald-400">
                             Suggest a new meal &rarr;
@@ -511,8 +517,9 @@
                         </p>
                     </div>
                     <div class="flex flex-wrap items-center gap-2.5">
-                        <a href="{{ route('report') }}" class="inline-flex rounded-full bg-white/15 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/30 transition hover:bg-white/25">
-                            📊 View Reports
+                        <a href="{{ route('report') }}" class="inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/30 transition hover:bg-white/25">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                            View Reports
                         </a>
                         <form action="{{ route('save-report') }}" method="POST" @submit.prevent="saveDailySummary($el)">
                             @csrf
@@ -524,9 +531,10 @@
                             <button
                                 type="submit"
                                 :disabled="isSavingSummary"
-                                class="inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-800 shadow-md transition hover:bg-emerald-50 hover:shadow-lg disabled:opacity-60"
+                                class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-800 shadow-md transition hover:bg-emerald-50 hover:shadow-lg disabled:opacity-60"
                             >
-                                <span x-text="isSavingSummary ? 'Syncing...' : '💾 Sync Summary'">💾 Sync Summary</span>
+                                <svg class="h-4 w-4" :class="isSavingSummary ? 'animate-spin' : ''" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                                <span x-text="isSavingSummary ? 'Syncing...' : 'Sync Summary'">Sync Summary</span>
                             </button>
                         </form>
                     </div>

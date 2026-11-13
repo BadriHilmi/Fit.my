@@ -165,7 +165,7 @@
                     class="mb-2.5 flex items-center justify-between rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-black text-white shadow-sm"
                 >
                     <span class="flex items-center gap-1.5 truncate">
-                        <span class="animate-bounce">✨</span>
+                        <svg class="h-3.5 w-3.5 animate-pulse text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                         <span class="truncate">Dragging: {{ $meal->Name }}</span>
                     </span>
                     <span class="shrink-0 text-[10px] font-bold uppercase tracking-wider text-emerald-100">Drop above ↑</span>
@@ -183,8 +183,8 @@
                             </span>
                             <!-- Drag grip hint icon -->
                             <span class="text-slate-300 group-hover:text-slate-400 dark:text-slate-600 dark:group-hover:text-slate-400" title="Drag this food card into Breakfast, Lunch, or Dinner">
-                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14zm6-12a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14z"/>
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/>
                                 </svg>
                             </span>
                         </div>
@@ -206,7 +206,7 @@
                     <!-- Tap / Drag Indicator Footer -->
                     <div class="flex items-center justify-between pt-1 text-[11px] font-semibold text-slate-400 group-hover:text-emerald-600 dark:text-slate-500">
                         <span class="flex items-center gap-1">
-                            <span>🖐️</span>
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
                             <span x-text="expanded === {{ $meal->id }} ? 'Click to collapse' : 'Drag or click to add'"></span>
                         </span>
                         <svg 
