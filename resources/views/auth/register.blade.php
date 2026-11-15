@@ -8,7 +8,7 @@
         method="POST"
         action="{{ route('register') }}"
         enctype="multipart/form-data"
-        x-data="{ submitting: false }"
+        x-data="{ submitting: false, password: '', password_confirmation: '' }"
         @submit="submitting = true"
         class="space-y-4"
     >
@@ -152,9 +152,11 @@
                 id="password"
                 type="password"
                 label="Password"
-                placeholder="Create a password"
+                placeholder="Create a strong password"
                 :messages="$errors->get('password')"
                 :password-toggle="true"
+                x-model="password"
+                hint="Minimum 8 characters with uppercase, lowercase, numbers & symbols."
                 required
                 autocomplete="new-password"
             />
@@ -164,13 +166,16 @@
                 id="password_confirmation"
                 type="password"
                 label="Confirm password"
-                placeholder="Repeat password"
+                placeholder="Repeat your password"
                 :messages="$errors->get('password_confirmation')"
                 :password-toggle="true"
+                x-model="password_confirmation"
                 required
                 autocomplete="new-password"
             />
         </div>
+
+        <x-password-requirements password-model="password" confirmation-model="password_confirmation" />
 
         <p class="text-xs leading-relaxed text-gray-600">
             By creating an account, your profile metrics are used solely to compute your personalized daily calorie target under Fit.my Terms &amp; Privacy practices.

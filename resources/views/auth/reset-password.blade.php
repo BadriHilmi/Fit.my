@@ -6,7 +6,7 @@
     <form
         method="POST"
         action="{{ route('password.store') }}"
-        x-data="{ submitting: false }"
+        x-data="{ submitting: false, password: '', password_confirmation: '' }"
         @submit="submitting = true"
         class="space-y-4"
     >
@@ -31,8 +31,11 @@
             id="password"
             type="password"
             label="New password"
+            placeholder="At least 8 characters with upper/lower, numbers & symbols"
             :messages="$errors->get('password')"
             :password-toggle="true"
+            x-model="password"
+            hint="Minimum 8 characters with uppercase, lowercase, numbers & symbols."
             required
             autocomplete="new-password"
         />
@@ -42,11 +45,15 @@
             id="password_confirmation"
             type="password"
             label="Confirm new password"
+            placeholder="Repeat new password"
             :messages="$errors->get('password_confirmation')"
             :password-toggle="true"
+            x-model="password_confirmation"
             required
             autocomplete="new-password"
         />
+
+        <x-password-requirements password-model="password" confirmation-model="password_confirmation" />
 
         <div class="pt-2">
             <x-button type="submit" variant="primary" size="lg" full-width="true" loading-expr="submitting">

@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-5 space-y-4">
+    <form method="post" action="{{ route('password.update') }}" x-data="{ password: '', password_confirmation: '' }" class="mt-5 space-y-4">
         @csrf
         @method('put')
 
@@ -32,6 +32,8 @@
                 name="password"
                 type="password"
                 autocomplete="new-password"
+                x-model="password"
+                placeholder="At least 8 characters with upper/lower, numbers & symbols"
                 class="mt-1.5 w-full rounded-xl border-slate-200 bg-white text-sm focus:border-emerald-500 focus:ring-emerald-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-1.5" />
@@ -44,10 +46,14 @@
                 name="password_confirmation"
                 type="password"
                 autocomplete="new-password"
+                x-model="password_confirmation"
+                placeholder="Repeat new password"
                 class="mt-1.5 w-full rounded-xl border-slate-200 bg-white text-sm focus:border-emerald-500 focus:ring-emerald-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-1.5" />
         </div>
+
+        <x-password-requirements password-model="password" confirmation-model="password_confirmation" />
 
         <div class="flex items-center justify-between pt-1">
             <div>
