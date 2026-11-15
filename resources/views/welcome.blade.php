@@ -74,8 +74,9 @@
     title="Fit.my — Track Daily Calories & Reach Your Nutrition Goals"
     description="Calculate your personalized daily calorie target, log breakfast, lunch, and dinner, and save daily summaries in one clean nutrition workspace."
 >
-    {{-- 2. Hero Section (shares .fit-canvas Sign In / Sign Up backdrop with subtle glow behind hero card) --}}
+    {{-- 2. Hero Section (Square dot grid with soft radial fade + subtle emerald glow) --}}
     <section class="relative overflow-hidden">
+        <x-dot-grid class="z-0" />
         <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-8 lg:py-24">
             <div class="lg:col-span-6">
                 <span class="inline-flex items-center gap-2 rounded-full border border-[#00d4a4]/30 bg-white/85 px-3.5 py-1 text-xs font-semibold text-[#008f6e] shadow-sm backdrop-blur-sm select-none dark:bg-slate-900/80 dark:text-[#00d4a4]">
@@ -614,6 +615,7 @@
     <section class="bg-white/45 py-12 sm:py-16 lg:pb-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="relative overflow-hidden rounded-2xl border border-[#00d4a4]/25 bg-[#0a0a0a] px-6 py-12 text-center shadow-mockup sm:px-12 sm:py-16">
+                <x-dot-grid :invert="true" mask="mask-radial-fade-center" :glow="true" glow-color="brand" class="z-0" />
                 <div class="relative z-10 mx-auto max-w-2xl">
                     <h2 class="text-2xl font-bold tracking-tight text-white sm:text-4xl">
                         Ready to keep every day aligned with your calorie goal?

@@ -224,8 +224,9 @@
         @drag-meal-start.window="handleDragStart($event.detail.id, $event.detail.name)"
         @drag-meal-end.window="handleDragEnd()"
         @dragend.window="handleDragEnd()"
-        class="py-8 transition-colors relative"
+        class="py-8 transition-colors relative overflow-hidden"
     >
+        <x-dot-grid class="z-0 h-[520px]" :glow="true" glow-color="mint" />
         <!-- Floating Drag Status Bar (visible while dragging anywhere on screen) -->
         <div
             x-show="isDragging"
@@ -265,7 +266,7 @@
             <span x-text="toastMessage"></span>
         </div>
 
-        <div class="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
+        <div class="relative z-10 mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
 
             <!-- Server Flash Alert (for fallback non-JS submissions) -->
             @if (session('success'))

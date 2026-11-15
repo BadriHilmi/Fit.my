@@ -6,6 +6,30 @@
 @tailwind utilities;
 
 @layer components {
+    .bg-dot-grid {
+        background-size: 24px 24px;
+        background-image: radial-gradient(circle, rgba(15, 23, 42, 0.08) 1.2px, transparent 1.2px);
+    }
+
+    .dark .bg-dot-grid {
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+    }
+
+    .bg-dot-grid-invert {
+        background-size: 24px 24px;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1.2px, transparent 1.2px);
+    }
+
+    .mask-radial-fade {
+        -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
+        mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
+    }
+
+    .mask-radial-fade-center {
+        -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 25%, transparent 75%);
+        mask-image: radial-gradient(ellipse at 50% 50%, black 25%, transparent 75%);
+    }
+
     .fit-canvas {
         background-image: linear-gradient(135deg, #d7dfe9 0%, #e4e8ee 48%, #d2e7df 100%);
     }
